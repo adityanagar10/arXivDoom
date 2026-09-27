@@ -58,6 +58,17 @@ final class PaperRepository {
         try context.save()
     }
 
+    /// Updates the local PDF path on an existing `SavedPaper` without toggling its
+    /// saved/unsaved state. Used when a paper is downloaded after already being
+    /// saved, so we don't need to delete-and-reinsert via `toggleSave` (which would
+    /// briefly flip the saved state and risk losing the record if interrupted).
+    func updateLocalPath(paperID: String, path: String) throws {
+        let descriptor = FetchDescriptor<SavedPaper>(predicate: #Predicate { $0.paperID == paperID })
+        guard let existing = try context.fetch(descriptor).first else { return }
+        existing.localPDFPath = path
+        try context.save()
+    }
+
     func fetchAllSaved() throws -> [SavedPaper] {
         let descriptor = FetchDescriptor<SavedPaper>(sortBy: [SortDescriptor(\.savedDate, order: .reverse)])
         return try context.fetch(descriptor)

@@ -20,6 +20,7 @@
 		DF9577BF3D4CC44666E9DF46 /* ArxivFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE6128200A567886F648C9 /* ArxivFeedParserTests.swift */; };
 		F1624A26E2F7B1D9EE6D9718 /* ArxivCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4108FC53FCE601B61491D32 /* ArxivCategory.swift */; };
 		F9906E081A83D6380EE58A74 /* ArxivScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */; };
+		FBDE675EAD348B0F15B524EB /* PDFDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F59C15B31BDB2ED46E94F40 /* PDFDownloaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		82EE1F385180586C4AB05BBF /* SavedPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPaper.swift; sourceTree = "<group>"; };
 		88AF178DD46E80ABB263CB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90FDF53051302149EEB77BA7 /* ArxivFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivFeedParser.swift; sourceTree = "<group>"; };
+		9F59C15B31BDB2ED46E94F40 /* PDFDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDownloaderTests.swift; sourceTree = "<group>"; };
 		C1BE6128200A567886F648C9 /* ArxivFeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivFeedParserTests.swift; sourceTree = "<group>"; };
 		C4108FC53FCE601B61491D32 /* ArxivCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivCategory.swift; sourceTree = "<group>"; };
 		CFEA79F7D11EF5264568FD36 /* ArxivAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivAPIClient.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				0391EA7D60898AB8CCE32C1B /* ArxivAPIClientQueryTests.swift */,
 				C1BE6128200A567886F648C9 /* ArxivFeedParserTests.swift */,
 				5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */,
+				9F59C15B31BDB2ED46E94F40 /* PDFDownloaderTests.swift */,
 			);
 			path = ArxivScrollTests;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				7E8C86E79ACF29C969A0C3B7 /* ArxivAPIClientQueryTests.swift in Sources */,
 				DF9577BF3D4CC44666E9DF46 /* ArxivFeedParserTests.swift in Sources */,
 				F9906E081A83D6380EE58A74 /* ArxivScrollTests.swift in Sources */,
+				FBDE675EAD348B0F15B524EB /* PDFDownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

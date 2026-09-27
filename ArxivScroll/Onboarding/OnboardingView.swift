@@ -4,6 +4,7 @@ import SwiftData
 struct OnboardingView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var viewModel: OnboardingViewModel?
+    @State private var showSaveError = false
     let onComplete: () -> Void
 
     var body: some View {
@@ -34,11 +35,26 @@ struct OnboardingView: View {
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                try? viewModel.saveSelection()
-                                onComplete()
+                                do {
+                                    try viewModel.saveSelection()
+                                    onComplete()
+                                } catch {
+                                    // Non-fatal, but must not let onComplete() fire: doing so would
+                                    // flip RootView to the TabView with zero categories actually
+                                    // saved. Keep the user on this screen and surface the failure.
+                                    #if DEBUG
+                                    print("OnboardingView: failed to save selection: \(error)")
+                                    #endif
+                                    showSaveError = true
+                                }
                             }
                             .disabled(!viewModel.canContinue)
                         }
+                    }
+                    .alert("Couldn't Save Categories", isPresented: $showSaveError) {
+                        Button("OK", role: .cancel) {}
+                    } message: {
+                        Text("Something went wrong saving your selection. Please try again.")
                     }
                 }
             } else {

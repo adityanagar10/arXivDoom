@@ -7,6 +7,7 @@ struct LibraryView: View {
     @State private var viewModel: LibraryViewModel?
     @State private var openDocument: PDFDocument?
     @State private var openTitle: String = ""
+    @State private var unavailableTitle: String?
 
     var body: some View {
         NavigationStack {
@@ -17,19 +18,30 @@ struct LibraryView: View {
                     } else {
                         List(viewModel.savedPapers) { saved in
                             Button {
-                                if let path = saved.localPDFPath,
-                                   let document = PDFDocument(url: URL(fileURLWithPath: path)) {
-                                    openTitle = saved.title
-                                    openDocument = document
+                                guard saved.isAvailable,
+                                      let path = saved.localPDFPath,
+                                      let document = PDFDocument(url: URL(fileURLWithPath: path)) else {
+                                    unavailableTitle = saved.title
+                                    return
                                 }
+                                openTitle = saved.title
+                                openDocument = document
                             } label: {
                                 VStack(alignment: .leading) {
                                     Text(saved.title)
-                                    Text(saved.savedDate, style: .date)
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
+                                        .foregroundStyle(saved.isAvailable ? .primary : .secondary)
+                                    if saved.isAvailable {
+                                        Text(saved.savedDate, style: .date)
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    } else {
+                                        Text("Not downloaded yet — open it from the Feed to save a copy")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
                                 }
                             }
+                            .opacity(saved.isAvailable ? 1 : 0.6)
                         }
                     }
                 } else {
@@ -50,6 +62,15 @@ struct LibraryView: View {
                         .navigationTitle(openTitle)
                 }
             }
+        }
+        .alert(
+            "Not Downloaded",
+            isPresented: Binding(get: { unavailableTitle != nil }, set: { if !$0 { unavailableTitle = nil } }),
+            presenting: unavailableTitle
+        ) { _ in
+            Button("OK", role: .cancel) {}
+        } message: { title in
+            Text("\"\(title)\" hasn't been downloaded yet. Open it from the Feed to save a copy for offline reading.")
         }
     }
 }

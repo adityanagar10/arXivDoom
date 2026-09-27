@@ -32,6 +32,7 @@
 		F1624A26E2F7B1D9EE6D9718 /* ArxivCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4108FC53FCE601B61491D32 /* ArxivCategory.swift */; };
 		F9906E081A83D6380EE58A74 /* ArxivScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */; };
 		FBDE675EAD348B0F15B524EB /* PDFDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F59C15B31BDB2ED46E94F40 /* PDFDownloaderTests.swift */; };
+		07BBDF3727584A4CADACBA89 /* SavedPaperAvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92704CB5A0DC4EBE885B9574 /* SavedPaperAvailabilityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E0FB13C76CA2AE01E0362FD3 /* ArxivScrollTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ArxivScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79892051ADAD52854358C92 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		F145C086FDD0072864FF7499 /* ArxivScroll.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ArxivScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92704CB5A0DC4EBE885B9574 /* SavedPaperAvailabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPaperAvailabilityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -110,6 +112,7 @@
 				5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */,
 				9F59C15B31BDB2ED46E94F40 /* PDFDownloaderTests.swift */,
 				19062976EA15C454F370125C /* PersistenceDedupTests.swift */,
+				92704CB5A0DC4EBE885B9574 /* SavedPaperAvailabilityTests.swift */,
 			);
 			path = ArxivScrollTests;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				F9906E081A83D6380EE58A74 /* ArxivScrollTests.swift in Sources */,
 				FBDE675EAD348B0F15B524EB /* PDFDownloaderTests.swift in Sources */,
 				3FCC495B962567D1885E108A /* PersistenceDedupTests.swift in Sources */,
+				07BBDF3727584A4CADACBA89 /* SavedPaperAvailabilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

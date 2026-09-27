@@ -42,8 +42,22 @@ struct PDFReaderScreen: View {
         guard !isLoading else { return }
         isLoading = true
         errorMessage = nil
+
+        let path: String
         do {
-            let path = try await PDFDownloader.downloadIfNeeded(paperID: paper.id, pdfURL: paper.pdfURL)
+            path = try await PDFDownloader.downloadIfNeeded(paperID: paper.id, pdfURL: paper.pdfURL)
+        } catch {
+            errorMessage = "Couldn't download the PDF. Check your connection."
+            isLoading = false
+            return
+        }
+
+        // The download itself succeeded from here on, so a failure updating the
+        // repository shouldn't be reported as a download failure (which would be
+        // misleading and would make Retry needlessly re-download a file we already
+        // have). It also shouldn't block the user from reading a PDF they already
+        // successfully downloaded.
+        do {
             let repository = PaperRepository(context: modelContext)
             if try repository.isSaved(paperID: paper.id) {
                 // Update the existing saved entry's local path now that the PDF has
@@ -53,15 +67,16 @@ struct PDFReaderScreen: View {
                 // add/remove semantics to compose into an upsert.
                 try repository.updateLocalPath(paperID: paper.id, path: path)
             }
-            guard let document = PDFDocument(url: URL(fileURLWithPath: path)) else {
-                errorMessage = "The downloaded file isn't a valid PDF."
-                isLoading = false
-                return
-            }
-            self.document = document
         } catch {
-            errorMessage = "Couldn't download the PDF. Check your connection."
+            // Non-fatal: fall through and still try to show the downloaded PDF.
         }
+
+        guard let document = PDFDocument(url: URL(fileURLWithPath: path)) else {
+            errorMessage = "The downloaded file isn't a valid PDF."
+            isLoading = false
+            return
+        }
+        self.document = document
         isLoading = false
     }
 }

@@ -3,6 +3,7 @@ import SwiftData
 
 struct FeedView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel: FeedViewModel?
     @State private var readerPaper: Paper?
 
@@ -52,6 +53,14 @@ struct FeedView: View {
             // Ensure any buffered "seen" marks are persisted even if the feed is
             // dismissed before another page-load flush point is reached.
             viewModel?.flushSeenPapers()
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            // Ensure buffered "seen" marks are persisted before the app is
+            // backgrounded (and possibly killed while backgrounded), since
+            // `.onDisappear` alone doesn't fire in that case.
+            if newPhase == .background || newPhase == .inactive {
+                viewModel?.flushSeenPapers()
+            }
         }
         .sheet(item: $readerPaper) { paper in
             PDFReaderScreen(paper: paper)

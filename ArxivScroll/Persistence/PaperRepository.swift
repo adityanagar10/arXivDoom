@@ -29,7 +29,10 @@ final class PaperRepository {
     /// than saving on every individual `markSeen` call.
     func markSeenBatch(paperIDs: [String]) throws {
         guard !paperIDs.isEmpty else { return }
-        let descriptor = FetchDescriptor<SeenPaper>()
+        // Scope the fetch to just the IDs being flushed instead of pulling the
+        // entire (ever-growing) SeenPaper table, mirroring `markSeen`'s use of a
+        // `#Predicate` to avoid a full-table scan on this scroll-triggered path.
+        let descriptor = FetchDescriptor<SeenPaper>(predicate: #Predicate { paperIDs.contains($0.paperID) })
         var seenIDs = Set(try context.fetch(descriptor).map(\.paperID))
         for paperID in paperIDs {
             guard !seenIDs.contains(paperID) else { continue }

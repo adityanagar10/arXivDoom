@@ -25,6 +25,27 @@ final class PersistenceDedupTests: XCTestCase {
         XCTAssertEqual(result.map(\.id), ["unseen-1"])
     }
 
+    func test_markSeenBatch_insertsOnlyUnseenIDsAndIsIdempotent() throws {
+        let context = try makeInMemoryContext()
+        let repo = PaperRepository(context: context)
+
+        try repo.markSeen(paperID: "already-seen")
+
+        try repo.markSeenBatch(paperIDs: ["already-seen", "new-1", "new-2"])
+
+        let seen = try repo.filterUnseen([
+            Paper(id: "already-seen", title: "", authors: [], abstract: "", categories: [], pdfURL: URL(string: "https://example.com/a.pdf")!, publishedDate: .now),
+            Paper(id: "new-1", title: "", authors: [], abstract: "", categories: [], pdfURL: URL(string: "https://example.com/b.pdf")!, publishedDate: .now),
+            Paper(id: "new-2", title: "", authors: [], abstract: "", categories: [], pdfURL: URL(string: "https://example.com/c.pdf")!, publishedDate: .now),
+        ])
+        XCTAssertTrue(seen.isEmpty, "all three IDs should now be recorded as seen")
+
+        // Calling again with overlapping IDs shouldn't create duplicate SeenPaper rows.
+        try repo.markSeenBatch(paperIDs: ["new-1", "new-2", "new-3"])
+        let descriptor = FetchDescriptor<SeenPaper>(predicate: #Predicate<SeenPaper> { $0.paperID == "new-1" })
+        XCTAssertEqual(try context.fetch(descriptor).count, 1)
+    }
+
     func test_toggleSave_addsAndRemovesSavedPaper() throws {
         let context = try makeInMemoryContext()
         let repo = PaperRepository(context: context)

@@ -89,7 +89,10 @@ final class FeedViewModel {
     /// Call when the user is a few cards from the end of the loaded list.
     func loadMoreIfNeeded(currentPaper: Paper) async {
         guard let index = papers.firstIndex(where: { $0.id == currentPaper.id }) else { return }
-        if index >= papers.count - 5 {
+        // `max(0, ...)` guards against `papers.count` being small enough (e.g. after
+        // `filterUnseen` strips most of a page) that `papers.count - 5` would go
+        // negative, which would make this true for every index.
+        if index >= max(0, papers.count - 5) {
             await loadNextPage()
         }
     }

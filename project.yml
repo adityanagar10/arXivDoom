@@ -36,13 +36,26 @@ targets:
         GENERATE_INFOPLIST_FILE: "YES"
     dependencies:
       - target: ArxivScroll
+  ArxivScrollUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: ArxivScrollUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dev.arxivscroll.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+    dependencies:
+      - target: ArxivScroll
 schemes:
   ArxivScroll:
     build:
       targets:
         ArxivScroll: all
+        ArxivScrollUITests: [test]
     test:
       targets:
         - ArxivScrollTests
+        - ArxivScrollUITests
     run:
       config: Debug

@@ -30,6 +30,7 @@
 		A1A0D881532C0BD6A64A1F83 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79892051ADAD52854358C92 /* LibraryView.swift */; };
 		BBEEEB1957EDEC3A0B80A153 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD6C498F653DC8C919030A /* LibraryViewModel.swift */; };
 		C58F3F8BF3703E3F55E13423 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EFD02E4E4C64C05833ED58 /* SettingsViewModel.swift */; };
+		C7350253E4BAAB32A35D6243 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B43BB42E0422BF706DA105 /* SmokeTests.swift */; };
 		D2AA11B4B117900DD9A2D21F /* SeenPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5C6106B6ED893F3742E33 /* SeenPaper.swift */; };
 		DF9577BF3D4CC44666E9DF46 /* ArxivFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE6128200A567886F648C9 /* ArxivFeedParserTests.swift */; };
 		E35693CA7B2C536390EA215C /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE352BAA7E53A71EFC39FDC /* FeedViewModel.swift */; };
@@ -39,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6B765F96D63AD594C000229F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9074523C25A211F531929A9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6F5A77AB1CDD3909F1DF620;
+			remoteInfo = ArxivScroll;
+		};
 		711048C90FF2F856E94B0FAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9074523C25A211F531929A9A /* Project object */;
@@ -75,7 +83,9 @@
 		BFFD6C498F653DC8C919030A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		C1BE6128200A567886F648C9 /* ArxivFeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivFeedParserTests.swift; sourceTree = "<group>"; };
 		C4108FC53FCE601B61491D32 /* ArxivCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivCategory.swift; sourceTree = "<group>"; };
+		CAA8F448DC07492BE97FA9C4 /* ArxivScrollUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ArxivScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFEA79F7D11EF5264568FD36 /* ArxivAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivAPIClient.swift; sourceTree = "<group>"; };
+		D0B43BB42E0422BF706DA105 /* SmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTests.swift; sourceTree = "<group>"; };
 		D764CF6D6A27E8A93069AB4B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E0FB13C76CA2AE01E0362FD3 /* ArxivScrollTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ArxivScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79892051ADAD52854358C92 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -83,6 +93,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		365BEC8F13B84A8A16424D9D /* ArxivScrollUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B43BB42E0422BF706DA105 /* SmokeTests.swift */,
+			);
+			path = ArxivScrollUITests;
+			sourceTree = "<group>";
+		};
 		4A59A1D8ECE0DF4AEBBCAC0A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +124,7 @@
 			children = (
 				F145C086FDD0072864FF7499 /* ArxivScroll.app */,
 				E0FB13C76CA2AE01E0362FD3 /* ArxivScrollTests.xctest */,
+				CAA8F448DC07492BE97FA9C4 /* ArxivScrollUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +165,7 @@
 			children = (
 				75F3E500B0D420A0EC483B46 /* ArxivScroll */,
 				679D0E7B5A972F7108E586BE /* ArxivScrollTests */,
+				365BEC8F13B84A8A16424D9D /* ArxivScrollUITests */,
 				5BDA7AAFA58318FB0844117D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -211,6 +231,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3DD609CF30C2A80A32FB7BA1 /* ArxivScrollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F1865BF55B1592963A84462 /* Build configuration list for PBXNativeTarget "ArxivScrollUITests" */;
+			buildPhases = (
+				A40B23D366CC22C7C6A24EC7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C28A0DFC89B9FC23BCF1A428 /* PBXTargetDependency */,
+			);
+			name = ArxivScrollUITests;
+			packageProductDependencies = (
+			);
+			productName = ArxivScrollUITests;
+			productReference = CAA8F448DC07492BE97FA9C4 /* ArxivScrollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F6F5A77AB1CDD3909F1DF620 /* ArxivScroll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF0183744E2ECADC92B40C4 /* Build configuration list for PBXNativeTarget "ArxivScroll" */;
@@ -256,6 +294,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3DD609CF30C2A80A32FB7BA1 = {
+						TestTargetID = F6F5A77AB1CDD3909F1DF620;
+					};
 				};
 			};
 			buildConfigurationList = B8C81930D8E86489FFCB84DD /* Build configuration list for PBXProject "ArxivScroll" */;
@@ -274,6 +315,7 @@
 			targets = (
 				F6F5A77AB1CDD3909F1DF620 /* ArxivScroll */,
 				FD9BC207A1ADCEC0A99C8ADC /* ArxivScrollTests */,
+				3DD609CF30C2A80A32FB7BA1 /* ArxivScrollUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +361,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A40B23D366CC22C7C6A24EC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7350253E4BAAB32A35D6243 /* SmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B861968E73BE19F1BCB24CCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +385,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C28A0DFC89B9FC23BCF1A428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6F5A77AB1CDD3909F1DF620 /* ArxivScroll */;
+			targetProxy = 6B765F96D63AD594C000229F /* PBXContainerItemProxy */;
+		};
 		DCCCDFE92AA9A5DBFB3DEBB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F6F5A77AB1CDD3909F1DF620 /* ArxivScroll */;
@@ -362,6 +417,23 @@
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32FB21D54767B414E5138C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.arxivscroll.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArxivScroll;
 			};
 			name = Debug;
 		};
@@ -429,6 +501,23 @@
 				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
+		};
+		58F657EE908DADF03DC4D580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.arxivscroll.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArxivScroll;
+			};
+			name = Release;
 		};
 		872858E24DA91B51C0D28864 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -547,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F1865BF55B1592963A84462 /* Build configuration list for PBXNativeTarget "ArxivScrollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32FB21D54767B414E5138C73 /* Debug */,
+				58F657EE908DADF03DC4D580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		7B445B9800152E4B1956C351 /* Build configuration list for PBXNativeTarget "ArxivScrollTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -21,6 +21,20 @@
                ReferencedContainer = "container:ArxivScroll.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DD609CF30C2A80A32FB7BA1"
+               BuildableName = "ArxivScrollUITests.xctest"
+               BlueprintName = "ArxivScrollUITests"
+               ReferencedContainer = "container:ArxivScroll.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -47,6 +61,17 @@
                BlueprintIdentifier = "FD9BC207A1ADCEC0A99C8ADC"
                BuildableName = "ArxivScrollTests.xctest"
                BlueprintName = "ArxivScrollTests"
+               ReferencedContainer = "container:ArxivScroll.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DD609CF30C2A80A32FB7BA1"
+               BuildableName = "ArxivScrollUITests.xctest"
+               BlueprintName = "ArxivScrollUITests"
                ReferencedContainer = "container:ArxivScroll.xcodeproj">
             </BuildableReference>
          </TestableReference>

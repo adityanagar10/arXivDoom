@@ -33,6 +33,14 @@ final class SettingsViewModel {
         let selected = ArxivTaxonomy.archives
             .flatMap(\.categories)
             .filter { selectedCodes.contains($0.code) }
-        try? repository.setFollowedCategories(selected)
+        do {
+            try repository.setFollowedCategories(selected)
+        } catch {
+            // Non-fatal: the UI's checkmark state (selectedCodes) is already updated,
+            // but the write didn't persist. Logged so this is diagnosable in the field.
+            #if DEBUG
+            print("SettingsViewModel: failed to save followed categories: \(error)")
+            #endif
+        }
     }
 }

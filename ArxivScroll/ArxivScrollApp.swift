@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct ArxivScrollApp: App {
@@ -6,5 +7,6 @@ struct ArxivScrollApp: App {
         WindowGroup {
             Text("ArxivScroll")
         }
+        .modelContainer(for: [FollowedCategory.self, SeenPaper.self, SavedPaper.self])
     }
 }

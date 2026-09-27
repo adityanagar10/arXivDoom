@@ -19,6 +19,7 @@
 		36B49F074F9158AE3A0A6305 /* PDFDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DF894F7AF99A617644189F /* PDFDownloader.swift */; };
 		3FCC495B962567D1885E108A /* PersistenceDedupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19062976EA15C454F370125C /* PersistenceDedupTests.swift */; };
 		40CD75A2D9D4D293DF307286 /* ArxivAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA79F7D11EF5264568FD36 /* ArxivAPIClient.swift */; };
+		4A4998BE7B49CB3254449975 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD66DC6214ED96D8888579 /* RootView.swift */; };
 		599BAD1DCE75B230666F627C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764CF6D6A27E8A93069AB4B /* OnboardingView.swift */; };
 		5F981D2F7CCEB8A96E930EFC /* SavedPaperAvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1084AE5CA2041D52E379016C /* SavedPaperAvailabilityTests.swift */; };
 		68157EF2E20002318B584249 /* FollowedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE35B545B6C77E040967134 /* FollowedCategory.swift */; };
@@ -59,6 +60,7 @@
 		397D3D0D0D8BEB4191D421CE /* PaperCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperCardView.swift; sourceTree = "<group>"; };
 		3CE35B545B6C77E040967134 /* FollowedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedCategory.swift; sourceTree = "<group>"; };
 		40AE29FA884BE19FD7BB6433 /* PaperRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperRepository.swift; sourceTree = "<group>"; };
+		4CBD66DC6214ED96D8888579 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivScrollTests.swift; sourceTree = "<group>"; };
 		62EFD02E4E4C64C05833ED58 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		79FD540D662E6D3EB50863EE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */,
 				88AF178DD46E80ABB263CB50 /* Assets.xcassets */,
+				4CBD66DC6214ED96D8888579 /* RootView.swift */,
 				C4FFE651B1538E48F6544F4E /* Feed */,
 				53E1C5CF8E97E6C7A7CB064E /* Library */,
 				ED0335DD0B87478D1DAF60BF /* Models */,
@@ -308,6 +311,7 @@
 				367791C09548B1D5069DC67D /* Paper.swift in Sources */,
 				0AF934672DB219183A424D8F /* PaperCardView.swift in Sources */,
 				04A9AC8CE093472BF043A100 /* PaperRepository.swift in Sources */,
+				4A4998BE7B49CB3254449975 /* RootView.swift in Sources */,
 				7CF2E431219117A2B21945DB /* SavedPaper.swift in Sources */,
 				D2AA11B4B117900DD9A2D21F /* SeenPaper.swift in Sources */,
 				0763B6437EE298913D13A0AF /* SettingsView.swift in Sources */,

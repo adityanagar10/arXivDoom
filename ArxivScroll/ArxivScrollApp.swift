@@ -5,7 +5,7 @@ import SwiftData
 struct ArxivScrollApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("ArxivScroll")
+            RootView()
         }
         .modelContainer(for: [FollowedCategory.self, SeenPaper.self, SavedPaper.self])
     }

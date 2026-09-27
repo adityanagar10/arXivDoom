@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1BE6471701F8008056681CE7 /* ArxivScrollApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */; };
 		1DC107BE690CA01178271012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF178DD46E80ABB263CB50 /* Assets.xcassets */; };
+		367791C09548B1D5069DC67D /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6A27FFE8E04922889A33A /* Paper.swift */; };
+		F1624A26E2F7B1D9EE6D9718 /* ArxivCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4108FC53FCE601B61491D32 /* ArxivCategory.swift */; };
 		F9906E081A83D6380EE58A74 /* ArxivScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +27,9 @@
 /* Begin PBXFileReference section */
 		124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivScrollApp.swift; sourceTree = "<group>"; };
 		5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivScrollTests.swift; sourceTree = "<group>"; };
+		7BE6A27FFE8E04922889A33A /* Paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
 		88AF178DD46E80ABB263CB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4108FC53FCE601B61491D32 /* ArxivCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivCategory.swift; sourceTree = "<group>"; };
 		E0FB13C76CA2AE01E0362FD3 /* ArxivScrollTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ArxivScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F145C086FDD0072864FF7499 /* ArxivScroll.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ArxivScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -53,6 +57,7 @@
 			children = (
 				124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */,
 				88AF178DD46E80ABB263CB50 /* Assets.xcassets */,
+				ED0335DD0B87478D1DAF60BF /* Models */,
 			);
 			path = ArxivScroll;
 			sourceTree = "<group>";
@@ -64,6 +69,15 @@
 				679D0E7B5A972F7108E586BE /* ArxivScrollTests */,
 				5BDA7AAFA58318FB0844117D /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		ED0335DD0B87478D1DAF60BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4108FC53FCE601B61491D32 /* ArxivCategory.swift */,
+				7BE6A27FFE8E04922889A33A /* Paper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1624A26E2F7B1D9EE6D9718 /* ArxivCategory.swift in Sources */,
 				1BE6471701F8008056681CE7 /* ArxivScrollApp.swift in Sources */,
+				367791C09548B1D5069DC67D /* Paper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

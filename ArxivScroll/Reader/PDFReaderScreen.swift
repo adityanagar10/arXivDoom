@@ -69,6 +69,10 @@ struct PDFReaderScreen: View {
             }
         } catch {
             // Non-fatal: fall through and still try to show the downloaded PDF.
+            // Logged so a stale SavedPaper.localPDFPath is diagnosable in the field.
+            #if DEBUG
+            print("PDFReaderScreen: failed to update local path for \(paper.id): \(error)")
+            #endif
         }
 
         guard let document = PDFDocument(url: URL(fileURLWithPath: path)) else {

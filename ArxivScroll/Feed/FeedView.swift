@@ -57,7 +57,12 @@ struct FeedView: View {
         .onChange(of: scenePhase) { _, newPhase in
             // Ensure buffered "seen" marks are persisted before the app is
             // backgrounded (and possibly killed while backgrounded), since
-            // `.onDisappear` alone doesn't fire in that case.
+            // `.onDisappear` alone doesn't fire in that case. Flushing on both
+            // `.inactive` and `.background` double-fires on a normal
+            // active -> inactive -> background transition; harmless since
+            // `flushSeenPapers()` no-ops on an empty buffer, and catching
+            // `.inactive` also covers transient interruptions (e.g. an
+            // incoming call) that don't reach `.background`.
             if newPhase == .background || newPhase == .inactive {
                 viewModel?.flushSeenPapers()
             }

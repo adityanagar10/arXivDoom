@@ -23,6 +23,22 @@ final class PaperRepository {
         }
     }
 
+    /// Inserts a `SeenPaper` for each of `paperIDs` that isn't already recorded,
+    /// then persists all of them in a single `context.save()`. Intended for callers
+    /// (e.g. `FeedViewModel`) that want to batch many "seen" marks together rather
+    /// than saving on every individual `markSeen` call.
+    func markSeenBatch(paperIDs: [String]) throws {
+        guard !paperIDs.isEmpty else { return }
+        let descriptor = FetchDescriptor<SeenPaper>()
+        var seenIDs = Set(try context.fetch(descriptor).map(\.paperID))
+        for paperID in paperIDs {
+            guard !seenIDs.contains(paperID) else { continue }
+            context.insert(SeenPaper(paperID: paperID))
+            seenIDs.insert(paperID)
+        }
+        try context.save()
+    }
+
     func isSaved(paperID: String) throws -> Bool {
         let descriptor = FetchDescriptor<SavedPaper>(predicate: #Predicate { $0.paperID == paperID })
         return try !context.fetch(descriptor).isEmpty

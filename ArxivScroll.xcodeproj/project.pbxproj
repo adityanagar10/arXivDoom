@@ -11,6 +11,7 @@
 		1BE6471701F8008056681CE7 /* ArxivScrollApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */; };
 		1DC107BE690CA01178271012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF178DD46E80ABB263CB50 /* Assets.xcassets */; };
 		367791C09548B1D5069DC67D /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6A27FFE8E04922889A33A /* Paper.swift */; };
+		36B49F074F9158AE3A0A6305 /* PDFDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DF894F7AF99A617644189F /* PDFDownloader.swift */; };
 		40CD75A2D9D4D293DF307286 /* ArxivAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA79F7D11EF5264568FD36 /* ArxivAPIClient.swift */; };
 		68157EF2E20002318B584249 /* FollowedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE35B545B6C77E040967134 /* FollowedCategory.swift */; };
 		7CF2E431219117A2B21945DB /* SavedPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE1F385180586C4AB05BBF /* SavedPaper.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		0391EA7D60898AB8CCE32C1B /* ArxivAPIClientQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivAPIClientQueryTests.swift; sourceTree = "<group>"; };
 		124469397096F9FE5E8A7776 /* ArxivScrollApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivScrollApp.swift; sourceTree = "<group>"; };
+		13DF894F7AF99A617644189F /* PDFDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDownloader.swift; sourceTree = "<group>"; };
 		2BA5C6106B6ED893F3742E33 /* SeenPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenPaper.swift; sourceTree = "<group>"; };
 		3CE35B545B6C77E040967134 /* FollowedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedCategory.swift; sourceTree = "<group>"; };
 		5D85D3F7E14CA222B83516BD /* ArxivScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArxivScrollTests.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				88AF178DD46E80ABB263CB50 /* Assets.xcassets */,
 				ED0335DD0B87478D1DAF60BF /* Models */,
 				4A59A1D8ECE0DF4AEBBCAC0A /* Networking */,
+				C6FF616464D5AE499187E847 /* Persistence */,
 			);
 			path = ArxivScroll;
 			sourceTree = "<group>";
@@ -95,6 +98,14 @@
 				679D0E7B5A972F7108E586BE /* ArxivScrollTests */,
 				5BDA7AAFA58318FB0844117D /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C6FF616464D5AE499187E847 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				13DF894F7AF99A617644189F /* PDFDownloader.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		ED0335DD0B87478D1DAF60BF /* Models */ = {
@@ -200,6 +211,7 @@
 				142DF17258002AA4739F8BE7 /* ArxivFeedParser.swift in Sources */,
 				1BE6471701F8008056681CE7 /* ArxivScrollApp.swift in Sources */,
 				68157EF2E20002318B584249 /* FollowedCategory.swift in Sources */,
+				36B49F074F9158AE3A0A6305 /* PDFDownloader.swift in Sources */,
 				367791C09548B1D5069DC67D /* Paper.swift in Sources */,
 				7CF2E431219117A2B21945DB /* SavedPaper.swift in Sources */,
 				D2AA11B4B117900DD9A2D21F /* SeenPaper.swift in Sources */,
